@@ -1,25 +1,44 @@
 // pages/detail/detail.js
-Page({
+import Grid from './js/ui/grid'
+// import PopupNumber from './js/ui/popupnumber'
 
+const $ = wx.createSelectorQuery()
+const grid = new Grid($.select('#container'))
+
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-
+    showPop: false,
+    gridData: [],
+    buttonTexts: [
+      { text: '检查', func: 'check'},
+      { text: '重置', func: 'reset'},
+      { text: '清理', func: 'clear'},
+      { text: '重建', func: 'rebuild'}
+    ],
+    numberArray: [
+      [1,2,3],
+      [4,5,6],
+      [7,8,9]
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      gridData: grid.build()
+    })
+    // grid.layout()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
@@ -62,5 +81,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  check: function () {
+    grid.check()
+  },
+  reset: function () {
+    grid.reset()
+  },
+  clear: function () {
+    grid.clear()
+  },
+  rebuild: function () {
+    grid.rebuild()
   }
 })

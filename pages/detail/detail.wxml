@@ -1,25 +1,20 @@
 <!-- pages/detail/detail.wxml -->
 <view class="game-wrap">
   <!-- 九宫格 -->
-  <view class="container grid" id="container"></view>
+  <view class="container grid" id="container">
+    <view wx:for="{{gridData}}" wx:key="i" wx:for-index="i" wx:for-item="datas" class="row">
+      <span wx:for="{{datas}}" wx:for-item="data" wx:key="j"  wx:for-index="j" class="{{data==0 ? 'empty' : '' }}">{{(i*3+j)%2}}</span>
+    </view>
+  </view>
   <!-- 按钮组 -->
   <view class="dashboard" id="dashboard" class="dashboard button-wrap">
     <view class="buttons">
-      <button>检查</button>
-      <button>重置</button>
-      <button>清理</button>
-      <button>重建</button>
+      <button wx:for="{{buttonTexts}}" wx:for-item="item" wx:key="index" bindtap="item.func">{{item.text}}</button>
     </view>
   </view>
-  <view id="popup" class="grid popup_num hidden" style="position:absolute;left:10px;top:10px;">
-    <view class="row">
-      <span>1</span><span>2</span><span>3</span>
-    </view>
-    <view class="row">
-      <span>4</span><span>5</span><span>6</span>
-    </view>
-    <view class="row">
-      <span>7</span><span>8</span><span>9</span>
+  <view id="popup" class="grid popup_num" wx:if="{{showPop}}" style="position:absolute;left:10px;top:10px;">
+    <view class="row" wx:for="{{numberArray}}" wx:for-item="numbers" wx:key="index">
+      <span wx:for="{{numbers}}" wx:for-item="number" wx:key="index">{{number}}</span>
     </view>
     <view class="row">
       <span class="mark1"></span><span class="empty"></span><span class="mark3"></span>

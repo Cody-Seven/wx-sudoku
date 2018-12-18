@@ -19,7 +19,6 @@ class matrixToolkit {
             const j = i + Math.floor(Math.random() * (array.length - i));
             [array[i], array[j]] = [array[j], array[i]];
         }
-        console.log(array);
         return array;
     }
     /**

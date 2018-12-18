@@ -6,21 +6,25 @@
   display: none;
 }
 .container {
-  padding-left: 5%;
-  background-color: rgba(84, 51, 50, 0);
+  background-color: #391c82;
+  height: 650rpx;
 }
 .container .row {
+  width: 100%;
   border-color: #ccc;
+  height: 82rpsx;
+  display: flex;
 }
 .container .row > span {
+  width: 11%;
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  width: 10%;
-  height: 24px;
-  line-height: 24px;
-  border: 1px solid #ccc;
-  background-color: white;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  border: 1px solid #391c82;
+  background-color: #603198;
   border-right-width: 0;
   border-bottom-width: 0;
 }
@@ -37,7 +41,7 @@
   background-color: #eee;
 }
 .container .row > span.empty {
-  color: #fff;
+  color: transparent;
 }
 .container .row > span.error {
   background-color: lightpink;
@@ -67,21 +71,25 @@
   border-bottom-width: 2px;
 }
 .popup_num {
-  padding-left: 5%;
-  background-color: rgba(84, 51, 50, 0);
+  background-color: #391c82;
+  height: 650rpx;
 }
 .popup_num .row {
+  width: 100%;
   border-color: #ccc;
+  height: 82rpsx;
+  display: flex;
 }
 .popup_num .row > span {
+  width: 11%;
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  width: 10%;
-  height: 24px;
-  line-height: 24px;
-  border: 1px solid #ccc;
-  background-color: white;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  border: 1px solid #391c82;
+  background-color: #603198;
   border-right-width: 0;
   border-bottom-width: 0;
 }
@@ -98,7 +106,7 @@
   background-color: #eee;
 }
 .popup_num .row > span.empty {
-  color: #fff;
+  color: transparent;
 }
 .popup_num .row > span.error {
   background-color: lightpink;
@@ -133,33 +141,29 @@
   line-height: 40px;
 }
 .dashboard {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 1rem;
-  background-color: #7a6ed5;
   box-sizing: border-box;
-  box-shadow: 0 -0.1rem 0.2rem #303030;
-  height: 3rem;
+  box-shadow: 0 -0.1rem 0.2rem rgba(96, 49, 152, 0.5);
 }
 .dashboard .buttons {
-  position: absolute;
-  bottom: 0.1rem;
-  left: 0;
   width: 100%;
 }
 .dashboard .buttons button {
-  float: left;
-  width: 25%;
-  height: 3rem;
-  font-size: 1.3rem;
-  color: white;
-  outline: none;
-  background-color: transparent;
-  border-radius: 0;
-  margin: 0;
-  padding: 0;
+  background-color: #7a6ed5;
+  width: 220rpx;
+  font-size: 18px;
+  border-radius: 40rpx;
+  border: none;
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  vertical-align: middle;
+  margin: 30rpx auto;
+  box-shadow: 0 0 5px #7a6ed5;
+}
+.dashboard .buttons button:first-child {
+  margin-top: 0;
 }
 .dashboard .buttons button:last-child {
   border-right-width: 1px;

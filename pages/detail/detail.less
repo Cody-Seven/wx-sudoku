@@ -1,9 +1,9 @@
 @shadowBottom: 0 0.2rem 0.3rem rgba(48, 48, 48, 192);
-@shadowTop: 0 -0.1rem 0.2rem rgba(48, 48, 48, 192);
-@circleColor: rgba(84,51,50,0);
-@gridStart: rgba(57,28,130,0);
-@gridEnd: rgba(96,49,152,0);
-.game-wrap{
+@shadowTop: 0 -0.1rem 0.2rem rgba(96, 49, 152, .5);
+@circleColor: rgba(84, 51, 50, 1);
+@gridStart: rgba(57, 28, 130, 1);
+@gridEnd: rgba(96, 49, 152, 1);
+.game-wrap {
   height: 100%;
   background-color: #f0f4f8;
 }
@@ -13,19 +13,23 @@
 }
 
 .container {
-  padding-left: 5%;
-  background-color: @circleColor;
+  background-color: @gridStart;
+  height: 650rpx;
   .row {
+    width: 100%;
     border-color: #ccc;
+    height: 82rpsx;
+    display: flex;
     >span {
+      width: 11%;
       display: inline-block;
       cursor: pointer;
       text-align: center;
-      width: 10%;
-      height: 24px;
-      line-height: 24px;
-      border: 1px solid #ccc;
-      background-color: white;
+      height: 70rpx;
+      line-height: 70rpx;
+      color: #fff;
+      border: 1px solid @gridStart;
+      background-color: @gridEnd;
       border-right-width: 0;
       border-bottom-width: 0;
       &.col_g_right {
@@ -41,7 +45,7 @@
         background-color: #eee;
       }
       &.empty {
-        color: #fff;
+        color: transparent;
       }
       &.error {
         background-color: lightpink;
@@ -93,31 +97,27 @@
 }
 
 .dashboard {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 1rem;
-  background-color: #7a6ed5;
   box-sizing: border-box;
   box-shadow: @shadowTop;
-  height: 3rem;
   .buttons {
-    position: absolute;
-    bottom: 0.1rem;
-    left: 0;
     width: 100%;
     button {
-      float: left;
-      width: 25%;
-      height: 3rem;
-      font-size: 1.3rem;
-      color: white;
-      outline: none;
-      background-color: transparent;
-      border-radius: 0;
-      margin: 0;
-      padding: 0;
+      background-color: #7a6ed5;
+      width: 220rpx;
+      font-size: 18px;
+      border-radius: 40rpx;
+      border: none;
+      color: #fff;
+      height: 90rpx;
+      line-height: 90rpx;
+      vertical-align: middle;
+      margin: 30rpx auto;
+      box-shadow: 0 0 5px #7a6ed5;
+      &:first-child{
+        margin-top: 0;
+      }
       &:last-child {
         border-right-width: 1px;
       }
