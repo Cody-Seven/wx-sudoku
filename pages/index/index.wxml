@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <view class='userinfo-background-left'></view>
+    <view class='userinfo-background-top'></view>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" onload="getUserInfo"> 获取头像昵称 </button>
+    <view wx:else class="userinfo-wrap">
+      <block>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <text class='userinfo-address'>{{userInfo.province}}，{{userInfo.city}}</text>
+      </block>
+    </view>
+    <view class='swiper cody-wrap'>
+      <swiper autoplay='true' interval='3000'>
+        <swiper-item>
+          <image src='/images/001-aqueduct.png'></image>
+        </swiper-item>
+        <swiper-item>
+          <image src='/images/002-petronas-towers.png'></image>
+        </swiper-item>
+        <swiper-item>
+          <image src='/images/003-cloud-gate.png'></image>
+        </swiper-item>
+      </swiper>
+      <view class='weather-wrap'>
+        <text>北京</text>
+        <text>21.6C</text>
+      </view>
+    </view>
+    <view class="start-button">
+    <span>数独游戏</span>
+    <button bindtap="StartGame">开始</button>
+    </view>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto"></text>
+  </view>
+</view>

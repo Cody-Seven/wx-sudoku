@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#8569dd",
+    "navigationBarTitleText": "sudoku",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+}

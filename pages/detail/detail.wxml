@@ -1,0 +1,20 @@
+<!--pages/detail/detail.wxml-->
+<view class="game-wrap">
+  <view>
+    <span>数独游戏</span>
+  </view>
+  <!-- 九宫格 -->
+  <view class="container grid" id="container"></view>
+  <!-- 按钮组 -->
+  <view class="dashboard" id="dashboard" class="dashboard button-wrap">
+    <view class="buttons">
+      <button>检查</button>
+      <button>重置</button>
+      <button>清理</button>
+      <button>重建</button>
+    </view>
+  </view>
+  <view id="popup" >
+
+  </view>
+</view>
