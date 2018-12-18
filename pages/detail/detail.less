@@ -1,32 +1,11 @@
 @shadowBottom: 0 0.2rem 0.3rem rgba(48, 48, 48, 192);
 @shadowTop: 0 -0.1rem 0.2rem rgba(48, 48, 48, 192);
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-body {
-  background-color: #eee;
-  user-select: none;
-  max-width: 450px;
-  >* {
-    max-width: 450px;
-  }
-}
-
-.title {
-  padding: 1rem 5%;
-  color: white;
-  background: steelblue;
-  margin-bottom: 2rem;
-  box-shadow: @shadowBottom;
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-  }
+@circleColor: rgba(84,51,50,0);
+@gridStart: rgba(57,28,130,0);
+@gridEnd: rgba(96,49,152,0);
+.game-wrap{
+  height: 100%;
+  background-color: #f0f4f8;
 }
 
 .hidden {
@@ -35,6 +14,7 @@ body {
 
 .container {
   padding-left: 5%;
+  background-color: @circleColor;
   .row {
     border-color: #ccc;
     >span {
@@ -118,7 +98,7 @@ body {
   left: 0;
   width: 100%;
   padding: 1rem;
-  background-color: steelblue;
+  background-color: #7a6ed5;
   box-sizing: border-box;
   box-shadow: @shadowTop;
   height: 3rem;
@@ -133,9 +113,11 @@ body {
       height: 3rem;
       font-size: 1.3rem;
       color: white;
-      border: 1px solid #ccc;
+      outline: none;
       background-color: transparent;
-      border-right-width: 0;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
       &:last-child {
         border-right-width: 1px;
       }

@@ -7,8 +7,8 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#8569dd",
-    "navigationBarTitleText": "sudoku",
-    "navigationBarTextStyle":"black",
+    "navigationBarTitleText": "wx-sudoku",
+    "navigationBarTextStyle":"white",
     "enablePullDownRefresh": true
   }
 }

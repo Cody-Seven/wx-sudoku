@@ -1,8 +1,5 @@
-<!--pages/detail/detail.wxml-->
+<!-- pages/detail/detail.wxml -->
 <view class="game-wrap">
-  <view>
-    <span>数独游戏</span>
-  </view>
   <!-- 九宫格 -->
   <view class="container grid" id="container"></view>
   <!-- 按钮组 -->
@@ -14,7 +11,18 @@
       <button>重建</button>
     </view>
   </view>
-  <view id="popup" >
-
+  <view id="popup" class="grid popup_num hidden" style="position:absolute;left:10px;top:10px;">
+    <view class="row">
+      <span>1</span><span>2</span><span>3</span>
+    </view>
+    <view class="row">
+      <span>4</span><span>5</span><span>6</span>
+    </view>
+    <view class="row">
+      <span>7</span><span>8</span><span>9</span>
+    </view>
+    <view class="row">
+      <span class="mark1"></span><span class="empty"></span><span class="mark3"></span>
+    </view>
   </view>
 </view>

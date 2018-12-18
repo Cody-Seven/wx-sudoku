@@ -24,16 +24,28 @@
         </swiper-item>
       </swiper>
       <view class='weather-wrap'>
-        <text>北京</text>
-        <text>21.6C</text>
+        <text>数独游戏</text>
+        <button class="start-button" bindtap="StartGame">Start</button>
       </view>
-    </view>
-    <view class="start-button">
-    <span>数独游戏</span>
-    <button bindtap="StartGame">开始</button>
     </view>
   </view>
   <view class="usermotto">
-    <text class="user-motto"></text>
+    <view class="chart-wrap shadow">
+      <view></view>
+    </view>
+    <view class="history">
+      <view class="shadow little">
+        <view class="title">88</view>
+        <text class="content">3m20s</text>
+      </view>
+      <view class="shadow little">
+        <view class="title">88</view>
+        <text class="content">3m20s</text>
+      </view>
+      <view class="shadow little">
+        <view class="title">88</view>
+        <text class="content">3m20s</text>
+      </view>
+    </view>
   </view>
 </view>
