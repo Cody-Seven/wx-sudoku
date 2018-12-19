@@ -1,10 +1,8 @@
 // pages/detail/detail.js
 import Grid from './js/ui/grid'
-// import PopupNumber from './js/ui/popupnumber'
 
 const $ = wx.createSelectorQuery()
 const grid = new Grid($.select('#container'))
-
 Page({
   /**
    * 页面的初始数据
@@ -81,6 +79,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  popUp: function (e) {
+    let data = e.currentTarget.dataset.value
+    if(data){
+      this.setData({
+        showPop: !this.data.showPop
+      })
+    }
   },
   check: function () {
     grid.check()

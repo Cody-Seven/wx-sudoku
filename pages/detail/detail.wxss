@@ -6,7 +6,7 @@
   display: none;
 }
 .container {
-  background-color: #391c82;
+  background-color: #3a1e78;
   height: 650rpx;
 }
 .container .row {
@@ -23,10 +23,13 @@
   height: 70rpx;
   line-height: 70rpx;
   color: #fff;
-  border: 1px solid #391c82;
-  background-color: #603198;
+  border: 1px solid #ccc;
+  background-color: #3a1e78;
   border-right-width: 0;
   border-bottom-width: 0;
+}
+.container .row > span.light {
+  background-color: #603198;
 }
 .container .row > span.col_g_right {
   border-right-width: 1px;
@@ -71,8 +74,9 @@
   border-bottom-width: 2px;
 }
 .popup_num {
-  background-color: #391c82;
+  background-color: #3a1e78;
   height: 650rpx;
+  height: 340rpx;
 }
 .popup_num .row {
   width: 100%;
@@ -88,10 +92,13 @@
   height: 70rpx;
   line-height: 70rpx;
   color: #fff;
-  border: 1px solid #391c82;
-  background-color: #603198;
+  border: 1px solid #ccc;
+  background-color: #3a1e78;
   border-right-width: 0;
   border-bottom-width: 0;
+}
+.popup_num .row > span.light {
+  background-color: #603198;
 }
 .popup_num .row > span.col_g_right {
   border-right-width: 1px;

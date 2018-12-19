@@ -1,4 +1,87 @@
 /**index.wxss**/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #4f3dbe;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all .5s;
+  transform: translateX(100%);
+  overflow: hidden;
+}
+.modal.show {
+  transform: translateX(100%);
+}
+.modal.hide {
+  transform: translateX(0);
+}
+.modal button {
+  width: 400rpx;
+  margin: 60rpx auto;
+  background-color: #fff;
+  color: #666;
+  box-shadow: 0 0 5px #ccc;
+}
+.modal view {
+  position: absolute;
+}
+.modal .description {
+  font-size: 14px;
+  color: #fff;
+  width: 500rpx;
+  line-height: 50rpx;
+  display: block;
+  top: 350rpx;
+  text-align: center;
+  margin: 350rpx auto;
+  margin-bottom: 0;
+}
+.modal .circle1 {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 400rpx;
+  background-color: #7a6ed5;
+  opacity: .7;
+  left: 200rpx;
+  top: -80rpx;
+}
+.modal .circle2 {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  background-color: #8569dd;
+  opacity: .4;
+  left: 100rpx;
+  bottom: 100rpx;
+}
+.modal .circle3 {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  background-color: #7a6ed5;
+  left: 150rpx;
+  top: 500rpx;
+}
+.modal .circle4 {
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 500rpx;
+  background-color: #7a6ed5;
+  opacity: .3;
+  right: -200rpx;
+  top: 300rpx;
+}
+.modal .circle5 {
+  width: 700rpx;
+  height: 700rpx;
+  border-radius: 700rpx;
+  background-color: #7a6ed5;
+  opacity: .1;
+  right: -200rpx;
+  bottom: -300rpx;
+}
 .userinfo {
   display: flex;
   flex-direction: column;

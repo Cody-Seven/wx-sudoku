@@ -1,7 +1,7 @@
 @shadowBottom: 0 0.2rem 0.3rem rgba(48, 48, 48, 192);
 @shadowTop: 0 -0.1rem 0.2rem rgba(96, 49, 152, .5);
 @circleColor: rgba(84, 51, 50, 1);
-@gridStart: rgba(57, 28, 130, 1);
+@gridStart: rgba(58, 30, 120, 1);
 @gridEnd: rgba(96, 49, 152, 1);
 .game-wrap {
   height: 100%;
@@ -28,10 +28,13 @@
       height: 70rpx;
       line-height: 70rpx;
       color: #fff;
-      border: 1px solid @gridStart;
-      background-color: @gridEnd;
+      border: 1px solid #ccc;
+      background-color: @gridStart;
       border-right-width: 0;
       border-bottom-width: 0;
+      &.light {
+        background-color: @gridEnd;
+      }
       &.col_g_right {
         border-right-width: 1px;
       }
@@ -87,6 +90,7 @@
 @popupCellSize: 40px;
 .popup_num {
   .container();
+  height: 340rpx;
   .row {
     >span {
       width: @popupCellSize;
@@ -115,7 +119,7 @@
       vertical-align: middle;
       margin: 30rpx auto;
       box-shadow: 0 0 5px #7a6ed5;
-      &:first-child{
+      &:first-child {
         margin-top: 0;
       }
       &:last-child {

@@ -1,31 +1,30 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <view class='userinfo-background-left'></view>
-    <view class='userinfo-background-top'></view>
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" onload="getUserInfo"> 获取头像昵称 </button>
-    <view wx:else class="userinfo-wrap">
-      <block>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        <text class='userinfo-address'>{{userInfo.province}}，{{userInfo.city}}</text>
-      </block>
-    </view>
-    <view class='swiper cody-wrap'>
-      <swiper autoplay='true' interval='3000'>
-        <swiper-item>
-          <image src='/images/001-aqueduct.png'></image>
-        </swiper-item>
-        <swiper-item>
-          <image src='/images/002-petronas-towers.png'></image>
-        </swiper-item>
-        <swiper-item>
-          <image src='/images/003-cloud-gate.png'></image>
-        </swiper-item>
-      </swiper>
+    <view class="container">
+      <view class="userinfo">
+        <view class='userinfo-background-left'></view>
+        <view class='userinfo-background-top'></view>
+        <view class="userinfo-wrap">
+          <block>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <text class='userinfo-address'>{{userInfo.province}}，{{userInfo.city}}</text>
+          </block>
+        </view>
+      <view class='swiper cody-wrap'>
+        <swiper autoplay='true' interval='3000'>
+          <swiper-item>
+            <image src='/images/001-aqueduct.png'></image>
+          </swiper-item>
+          <swiper-item>
+            <image src='/images/002-petronas-towers.png'></image>
+          </swiper-item>
+          <swiper-item>
+            <image src='/images/003-cloud-gate.png'></image>
+          </swiper-item>
+        </swiper>
       <view class='weather-wrap'>
         <text>数独游戏</text>
-        <button class="start-button" bindtap="StartGame">Start</button>
+        <button class="start-button" bindtap="startGame">Start</button>
       </view>
     </view>
   </view>
@@ -48,4 +47,13 @@
       </view>
     </view>
   </view>
-</view>
+  </view>
+  <view class="modal {{ !hasUserInfo && canIUse ? 'hide' : 'show'}}">
+    <view class="circle1"></view>
+    <view class="circle2"></view>
+    <view class="circle3"></view>
+    <view class="circle4"></view>
+    <view class="circle5"></view>
+    <text class="description">授权只是用您的微信昵称和头像，不会另作他用</text>
+    <button open-type="getUserInfo" bindtap="getUserInfo">同意授权</button>
+  </view>
