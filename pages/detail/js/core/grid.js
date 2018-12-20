@@ -4,9 +4,9 @@ import Sudoku from './sudoku'
 import Checker from './checker'
 
 class Grid {
-  build () {
+  build (level) {
     const sudoku = new Sudoku()
-    sudoku.make()
+    sudoku.make(level)
     return sudoku.puzzleMatrix
   }
 

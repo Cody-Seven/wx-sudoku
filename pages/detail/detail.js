@@ -12,6 +12,7 @@ Page({
     currentPosition: {},
     top: 0,
     left: 0,
+    level: 3,
     buttonTexts: [
       { text: '检查', func: 'check'},
       { text: '重置', func: 'reset'},
@@ -82,7 +83,7 @@ Page({
 
   },
   build () {
-    let gridData = grid.build()
+    let gridData = grid.build(this.data.level)
     this.setData({
       gridData: gridData,
       originData: gridData
@@ -105,7 +106,6 @@ Page({
       this.setData({
         'currentPosition.i': i,
         'currentPosition.j': j,
-        // showPop: !this.data.showPop
         showPop: true
       })
     }else{

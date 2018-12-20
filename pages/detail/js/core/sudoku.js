@@ -4,12 +4,12 @@
 
 import Generator from './generator'
 export default class Sudoku {
-  solutionMatrix;
-  puzzleMatrix;
+  solutionMatrix
+  puzzleMatrix
   constructor() {
-    const generator = new Generator();
-    generator.generate();
-    this.solutionMatrix = generator.matrix;
+    const generator = new Generator()
+    generator.generate()
+    this.solutionMatrix = generator.matrix
   }
   make (level = 5) {
     // 生成迷盘，随机去掉4个
