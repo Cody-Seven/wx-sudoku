@@ -47,22 +47,22 @@
   color: transparent;
 }
 .container .row > span.error {
-  background-color: lightpink;
+  background-color: black;
 }
 .container .row > span.error.empty {
-  color: lightpink;
+  color: black;
 }
 .container .row > span.mark1 {
-  background-color: lightblue;
+  background-color: teal;
 }
 .container .row > span.mark1.empty {
-  color: lightblue;
+  color: teal;
 }
 .container .row > span.mark3 {
-  background-color: lightgreen;
+  background-color: pink;
 }
 .container .row > span.mark3.empty {
-  color: lightgreen;
+  color: pink;
 }
 .container .row.row_g_bottom > span {
   border-bottom-width: 1px;
@@ -116,22 +116,22 @@
   color: transparent;
 }
 .popup_num .row > span.error {
-  background-color: lightpink;
+  background-color: black;
 }
 .popup_num .row > span.error.empty {
-  color: lightpink;
+  color: black;
 }
 .popup_num .row > span.mark1 {
-  background-color: lightblue;
+  background-color: teal;
 }
 .popup_num .row > span.mark1.empty {
-  color: lightblue;
+  color: teal;
 }
 .popup_num .row > span.mark3 {
-  background-color: lightgreen;
+  background-color: pink;
 }
 .popup_num .row > span.mark3.empty {
-  color: lightgreen;
+  color: pink;
 }
 .popup_num .row.row_g_bottom > span {
   border-bottom-width: 1px;

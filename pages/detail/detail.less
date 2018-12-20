@@ -3,6 +3,9 @@
 @circleColor: rgba(84, 51, 50, 1);
 @gridStart: rgba(58, 30, 120, 1);
 @gridEnd: rgba(96, 49, 152, 1);
+@errorColor: #000;
+@mark1Color: teal;
+@mark2Color: pink;
 .game-wrap {
   height: 100%;
   background-color: #f0f4f8;
@@ -51,21 +54,21 @@
         color: transparent;
       }
       &.error {
-        background-color: lightpink;
+        background-color: black;
         &.empty {
-          color: lightpink;
+          color: black;
         }
       }
       &.mark1 {
-        background-color: lightblue;
+        background-color: @mark1Color;
         &.empty {
-          color: lightblue;
+          color: @mark1Color;
         }
       }
       &.mark3 {
-        background-color: lightgreen;
+        background-color: @mark2Color;
         &.empty {
-          color: lightgreen;
+          color: @mark2Color;
         }
       }
     }

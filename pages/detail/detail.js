@@ -20,6 +20,7 @@ Page({
       { text: '清理', func: 'clear'},
       { text: '重建', func: 'rebuild'}
     ],
+    marks: [],
     numberArray: [
       [1,2,3],
       [4,5,6],
@@ -35,6 +36,10 @@ Page({
     this.setData({
       gridData: gridData,
       originData: gridData
+    })
+    // 初始化marks
+    this.setData({
+      marks: this.buildArray()
     })
   },
 
@@ -115,16 +120,27 @@ Page({
       showPop: !this.data.showPop
     })
   },
+  doMark1 () {},
+  doMark2 () {},
   check: function () {
-    grid.check()
+    // 检查每行 每列 每宫数据
+    this.setData({
+      marks: grid.check(this.data.gridData)
+    })
   },
   reset: function () {
-    grid.reset()
+    // 清除标记
+    // 数据恢复
+    this.setData({
+      gridData: this.data.originData
+    })
   },
   clear: function () {
-    grid.clear()
   },
   rebuild: function () {
     grid.rebuild()
+  },
+  buildArray: function () {
+    return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return true }))
   }
 })

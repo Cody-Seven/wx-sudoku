@@ -1,7 +1,7 @@
 {
   "name": "wxproject",
   "version": "1.0.0",
-  "description": "demo",
+  "description": "demo 小程序 数独游戏",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
