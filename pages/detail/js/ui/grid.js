@@ -34,10 +34,12 @@ class Grid {
     const checker = new Checker(data)
     if (checker.check()) {
       return true
+    }else{
+      return checker.matrixMarks
     }
     // 检查不成功，进行标记
-    const marks = checker.matrixMarks
-    return marks
+    // const marks = checker.matrixMarks
+    // return marks
   }
 
   rebuild () {

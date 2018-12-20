@@ -20,7 +20,8 @@ Page({
       { text: '清理', func: 'clear'},
       { text: '重建', func: 'rebuild'}
     ],
-    marks: [],
+    errorMarks: [], // 错误标记
+    mark1: [],
     numberArray: [
       [1,2,3],
       [4,5,6],
@@ -37,9 +38,11 @@ Page({
       gridData: gridData,
       originData: gridData
     })
-    // 初始化marks
+    // 初始化errorMarks
     this.setData({
-      marks: this.buildArray()
+      errorMarks: this.buildArray(),
+      mark1: this.buildFalseArray(),
+      mark2: this.buildFalseArray()
     })
   },
 
@@ -120,25 +123,53 @@ Page({
       showPop: !this.data.showPop
     })
   },
-  doMark1 () {},
-  doMark2 () {},
+  doMark1 () {
+    let position = 'mark1[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+    this.setData({
+      [position]: true
+    })
+  },
+  doMark2 () {
+    let position = 'mark2[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+    this.setData({
+      [position]: true
+    })
+  },
   check: function () {
     // 检查每行 每列 每宫数据
-    this.setData({
-      marks: grid.check(this.data.gridData)
-    })
+    let result = grid.check(this.data.gridData)
+    if (result===true){
+      console.log('success')
+    }else{
+      this.setData({
+        errorMarks: result
+      })
+    }
+
   },
   reset: function () {
     // 清除标记
+    this.setData({
+      errorMarks: this.buildArray()
+    })
     // 数据恢复
     this.setData({
       gridData: this.data.originData
     })
   },
   clear: function () {
+    // 清除标记
+    this.setData({
+      mark1: this.buildFalseArray(),
+      mark2: this.buildFalseArray()
+    })
   },
   rebuild: function () {
     grid.rebuild()
+  },
+  buildFalseArray: function () {
+    return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return false }))
+
   },
   buildArray: function () {
     return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return true }))

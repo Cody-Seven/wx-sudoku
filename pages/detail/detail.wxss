@@ -58,10 +58,10 @@
 .container .row > span.mark1.empty {
   color: teal;
 }
-.container .row > span.mark3 {
+.container .row > span.mark2 {
   background-color: pink;
 }
-.container .row > span.mark3.empty {
+.container .row > span.mark2.empty {
   color: pink;
 }
 .container .row.row_g_bottom > span {
@@ -127,10 +127,10 @@
 .popup_num .row > span.mark1.empty {
   color: teal;
 }
-.popup_num .row > span.mark3 {
+.popup_num .row > span.mark2 {
   background-color: pink;
 }
-.popup_num .row > span.mark3.empty {
+.popup_num .row > span.mark2.empty {
   color: pink;
 }
 .popup_num .row.row_g_bottom > span {
