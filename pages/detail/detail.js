@@ -33,17 +33,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let gridData = grid.build()
-    this.setData({
-      gridData: gridData,
-      originData: gridData
-    })
-    // 初始化errorMarks
-    this.setData({
-      errorMarks: this.buildArray(),
-      mark1: this.buildFalseArray(),
-      mark2: this.buildFalseArray()
-    })
+    this.build()
   },
 
   /**
@@ -92,6 +82,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  build () {
+    let gridData = grid.build()
+    this.setData({
+      gridData: gridData,
+      originData: gridData
+    })
+    // 初始化errorMarks
+    this.setData({
+      errorMarks: this.buildArray(),
+      mark1: this.buildFalseArray(),
+      mark2: this.buildFalseArray()
+    })
   },
   popUp: function (e) {
     let fixed = e.currentTarget.dataset.fixed
@@ -148,7 +151,7 @@ Page({
 
   },
   reset: function () {
-    // 清除标记
+    // 清除错误标记
     this.setData({
       errorMarks: this.buildArray()
     })
@@ -165,7 +168,9 @@ Page({
     })
   },
   rebuild: function () {
-    grid.rebuild()
+    // 生成新的迷盘
+    this.build()
+    // 清除标记
   },
   buildFalseArray: function () {
     return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return false }))
