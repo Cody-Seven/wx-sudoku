@@ -12,7 +12,7 @@
       <button wx:for="{{buttonTexts}}" wx:for-item="item" wx:key="index" bindtap="item.func">{{item.text}}</button>
     </view>
   </view>
-  <view id="popup" class="grid popup_num" wx:if="{{showPop}}" style="position:absolute;left:10px;top:10px;">
+  <view id="popup" class="grid popup_num" style="position:absolute;top: {{top*2}}rpx!important;left: {{left*2}}rpx!important;" wx:if="{{showPop}}">
     <view class="row" wx:for="{{numberArray}}" wx:for-item="numbers" wx:key="index">
       <span wx:for="{{numbers}}" wx:for-item="number" wx:key="index" data-value="{{number}}" bindtap="chooseNumber">{{number}}</span>
     </view>

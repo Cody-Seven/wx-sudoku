@@ -12,6 +12,8 @@ Page({
     gridData: [],
     originData: [],
     currentPosition: {},
+    top: 0,
+    left: 0,
     buttonTexts: [
       { text: '检查', func: 'check'},
       { text: '重置', func: 'reset'},
@@ -87,6 +89,9 @@ Page({
     let fixed = e.currentTarget.dataset.fixed
     let i = e.currentTarget.dataset.i
     let j = e.currentTarget.dataset.j
+    let left = e.currentTarget.offsetLeft
+    let top = e.currentTarget.offsetTop
+    // 控制数据
     if (!fixed){
       this.setData({
         'currentPosition.i': i,
@@ -94,6 +99,13 @@ Page({
         showPop: !this.data.showPop
       })
     }
+    // 控制弹框位置
+    left = left > 245 ? left - 120 : left + 25
+    top = top > 251 ? top - 170 - 20 : top + 20
+    this.setData({
+      top: top,
+      left: left
+    })
   },
   chooseNumber (e) {
     let value = e.currentTarget.dataset.value
