@@ -76,7 +76,7 @@
 .popup_num {
   background-color: #3a1e78;
   height: 650rpx;
-  height: 340rpx;
+  height: 320rpx;
 }
 .popup_num .row {
   width: 100%;

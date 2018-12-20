@@ -129,13 +129,15 @@ Page({
   doMark1 () {
     let position = 'mark1[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
     this.setData({
-      [position]: true
+      [position]: true,
+      showPop: !this.data.showPop
     })
   },
   doMark2 () {
     let position = 'mark2[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
     this.setData({
-      [position]: true
+      [position]: true,
+      showPop: !this.data.showPop
     })
   },
   check: function () {
