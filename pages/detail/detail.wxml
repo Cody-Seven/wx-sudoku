@@ -3,7 +3,7 @@
   <!-- 九宫格 -->
   <view class="container grid" id="container">
     <view wx:for="{{gridData}}" wx:key="i" wx:for-index="i" wx:for-item="datas" class="row">
-      <span wx:for="{{datas}}" wx:for-item="data" wx:key="j"  wx:for-index="j" class="{{data==0 ? 'empty' : ''}} {{ ((-1<j && j<3) || (5<j && j<9))&&(2<i && i<6) || ((-1<i&&i<3) || (5<i && i<9))&&(2<j && j<6) ? 'light' : ''}}" bindtap="popUp" data-value="{{data}}">{{data}}</span>
+      <span wx:for="{{datas}}" wx:for-item="data" wx:key="j"  wx:for-index="j" class="{{data==0 ? 'empty' : ''}} {{ ((-1<j && j<3) || (5<j && j<9))&&(2<i && i<6) || ((-1<i&&i<3) || (5<i && i<9))&&(2<j && j<6) ? 'light' : ''}}" bindtap="popUp" data-fixed="{{originData[i][j]!==0}}" data-i="{{i}}" data-j="{{j}}">{{data}}</span>
     </view>
   </view>
   <!-- 按钮组 -->
@@ -14,7 +14,7 @@
   </view>
   <view id="popup" class="grid popup_num" wx:if="{{showPop}}" style="position:absolute;left:10px;top:10px;">
     <view class="row" wx:for="{{numberArray}}" wx:for-item="numbers" wx:key="index">
-      <span wx:for="{{numbers}}" wx:for-item="number" wx:key="index">{{number}}</span>
+      <span wx:for="{{numbers}}" wx:for-item="number" wx:key="index" data-value="{{number}}" bindtap="chooseNumber">{{number}}</span>
     </view>
     <view class="row">
       <span class="mark1"></span><span class="empty"></span><span class="mark3"></span>

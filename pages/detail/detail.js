@@ -10,6 +10,8 @@ Page({
   data: {
     showPop: false,
     gridData: [],
+    originData: [],
+    currentPosition: {},
     buttonTexts: [
       { text: '检查', func: 'check'},
       { text: '重置', func: 'reset'},
@@ -27,10 +29,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let gridData = grid.build()
     this.setData({
-      gridData: grid.build()
+      gridData: gridData,
+      originData: gridData
     })
-    // grid.layout()
   },
 
   /**
@@ -81,12 +84,24 @@ Page({
 
   },
   popUp: function (e) {
-    let data = e.currentTarget.dataset.value
-    if(data){
+    let fixed = e.currentTarget.dataset.fixed
+    let i = e.currentTarget.dataset.i
+    let j = e.currentTarget.dataset.j
+    if (!fixed){
       this.setData({
+        'currentPosition.i': i,
+        'currentPosition.j': j,
         showPop: !this.data.showPop
       })
     }
+  },
+  chooseNumber (e) {
+    let value = e.currentTarget.dataset.value
+    let position = 'gridData[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+    this.setData({
+      [position]: value,
+      showPop: !this.data.showPop
+    })
   },
   check: function () {
     grid.check()
