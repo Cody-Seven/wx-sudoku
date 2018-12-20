@@ -1,8 +1,6 @@
 // pages/detail/detail.js
-import Grid from './js/ui/grid'
-
-const $ = wx.createSelectorQuery()
-const grid = new Grid($.select('#container'))
+import Grid from './js/core/grid'
+const grid = new Grid()
 Page({
   /**
    * 页面的初始数据
@@ -91,9 +89,9 @@ Page({
     })
     // 初始化errorMarks
     this.setData({
-      errorMarks: this.buildArray(),
-      mark1: this.buildFalseArray(),
-      mark2: this.buildFalseArray()
+      errorMarks: this._buildArray(),
+      mark1: this._buildFalseArray(),
+      mark2: this._buildFalseArray()
     })
   },
   popUp: function (e) {
@@ -107,7 +105,12 @@ Page({
       this.setData({
         'currentPosition.i': i,
         'currentPosition.j': j,
-        showPop: !this.data.showPop
+        // showPop: !this.data.showPop
+        showPop: true
+      })
+    }else{
+      this.setData({
+        showPop: false
       })
     }
     // 控制弹框位置
@@ -120,21 +123,21 @@ Page({
   },
   chooseNumber (e) {
     let value = e.currentTarget.dataset.value
-    let position = 'gridData[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+    let position = this._setPosition('gridData')
     this.setData({
       [position]: value,
       showPop: !this.data.showPop
     })
   },
   doMark1 () {
-    let position = 'mark1[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+    let position = this._setPosition('mark1')
     this.setData({
       [position]: true,
       showPop: !this.data.showPop
     })
   },
   doMark2 () {
-    let position = 'mark2[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+    let position = this._setPosition('mark2')
     this.setData({
       [position]: true,
       showPop: !this.data.showPop
@@ -155,7 +158,7 @@ Page({
   reset: function () {
     // 清除错误标记
     this.setData({
-      errorMarks: this.buildArray()
+      errorMarks: this._buildArray()
     })
     // 数据恢复
     this.setData({
@@ -165,8 +168,8 @@ Page({
   clear: function () {
     // 清除标记
     this.setData({
-      mark1: this.buildFalseArray(),
-      mark2: this.buildFalseArray()
+      mark1: this._buildFalseArray(),
+      mark2: this._buildFalseArray()
     })
   },
   rebuild: function () {
@@ -174,11 +177,14 @@ Page({
     this.build()
     // 清除标记
   },
-  buildFalseArray: function () {
+  _setPosition (str) {
+    return '' + str + '[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+  },
+  _buildFalseArray: function () {
     return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return false }))
 
   },
-  buildArray: function () {
+  _buildArray: function () {
     return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return true }))
   }
 })
