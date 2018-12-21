@@ -16,7 +16,7 @@ Page({
     currentPosition: {},
     top: null,
     left: null,
-    level: 3,
+    level: 1,
     buttonTexts: [
       { text: '检查', func: 'check'},
       { text: '重置', func: 'reset'},
@@ -173,14 +173,16 @@ Page({
     let result = grid.check(this.data.gridData)
     if (result===true){
       this.setData({
-        success: true
+        success: true,
+        errorMarks: this._buildArray()
       })
       clearTimeout(countTime)
       this.nextPass()
+    }else{
+      this.setData({
+        errorMarks: result
+      })
     }
-    this.setData({
-      errorMarks: result
-    })
   },
   reset: function () {
     // 清除错误标记
