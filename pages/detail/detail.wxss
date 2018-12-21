@@ -7,12 +7,12 @@
 }
 .container {
   background-color: #3a1e78;
-  height: 650rpx;
+  height: 780rpx;
 }
 .container .row {
   width: 100%;
   border-color: #ccc;
-  height: 82rpsx;
+  height: 92rpx;
   display: flex;
 }
 .container .row > span {
@@ -20,14 +20,18 @@
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  height: 70rpx;
-  line-height: 70rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   color: #fff;
   border: 1px solid #ccc;
   background-color: #3a1e78;
   border-right-width: 0;
   border-bottom-width: 0;
   position: relative;
+}
+.container .row > span.fill {
+  color: #999;
+  font-weight: 700;
 }
 .container .row > span.light {
   background-color: #603198;
@@ -65,29 +69,9 @@
 .container .row > span.mark2.empty {
   color: pink;
 }
-.container .row > span .tip {
-  display: inline-block;
-  background-color: aquamarine;
-  width: 20rpx;
-  height: 20rpx;
-  border-radius: 20rpx;
-  position: absolute;
-  top: 4rpx;
-  left: 4rpx;
-}
-.container .row > span .tip::after {
-  content: '';
-  display: inline-block;
-  background-color: #3a1e78;
-  width: 12rpx;
-  height: 12rpx;
-  border-radius: 12rpx;
-  position: absolute;
-  top: 4rpx;
-  left: 4rpx;
-}
-.container .row > span.light .tip .container .row > span::after {
-  background-color: #603198;
+.container .row > span.clear {
+  color: #fff;
+  font-size: 14px;
 }
 .container .row.row_g_bottom > span {
   border-bottom-width: 1px;
@@ -100,13 +84,13 @@
 }
 .popup_num {
   background-color: #3a1e78;
-  height: 650rpx;
+  height: 780rpx;
   height: 320rpx;
 }
 .popup_num .row {
   width: 100%;
   border-color: #ccc;
-  height: 82rpsx;
+  height: 92rpx;
   display: flex;
 }
 .popup_num .row > span {
@@ -114,14 +98,18 @@
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  height: 70rpx;
-  line-height: 70rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   color: #fff;
   border: 1px solid #ccc;
   background-color: #3a1e78;
   border-right-width: 0;
   border-bottom-width: 0;
   position: relative;
+}
+.popup_num .row > span.fill {
+  color: #999;
+  font-weight: 700;
 }
 .popup_num .row > span.light {
   background-color: #603198;
@@ -159,29 +147,9 @@
 .popup_num .row > span.mark2.empty {
   color: pink;
 }
-.popup_num .row > span .tip {
-  display: inline-block;
-  background-color: aquamarine;
-  width: 20rpx;
-  height: 20rpx;
-  border-radius: 20rpx;
-  position: absolute;
-  top: 4rpx;
-  left: 4rpx;
-}
-.popup_num .row > span .tip::after {
-  content: '';
-  display: inline-block;
-  background-color: #3a1e78;
-  width: 12rpx;
-  height: 12rpx;
-  border-radius: 12rpx;
-  position: absolute;
-  top: 4rpx;
-  left: 4rpx;
-}
-.popup_num .row > span.light .tip .popup_num .row > span::after {
-  background-color: #603198;
+.popup_num .row > span.clear {
+  color: #fff;
+  font-size: 14px;
 }
 .popup_num .row.row_g_bottom > span {
   border-bottom-width: 1px;
@@ -192,6 +160,9 @@
 .popup_num .row:last-child > span {
   border-bottom-width: 2px;
 }
+.popup_num .row {
+  height: 82rpx;
+}
 .popup_num .row > span {
   width: 40px;
   height: 40px;
@@ -201,7 +172,7 @@
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  box-shadow: 0 -0.1rem 0.2rem rgba(96, 49, 152, 0.5);
+  position: relative;
 }
 .dashboard .buttons {
   width: 100%;
@@ -213,8 +184,8 @@
   border-radius: 40rpx;
   border: none;
   color: #fff;
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 70rpx;
+  line-height: 70rpx;
   vertical-align: middle;
   margin: 30rpx auto;
   box-shadow: 0 0 5px #7a6ed5;
@@ -227,4 +198,20 @@
 }
 .dashboard .buttons button:focus {
   outline: 0;
+}
+.dashboard span {
+  color: #7a6ed5;
+  text-decoration: underline;
+  position: absolute;
+}
+.dashboard .nextPass {
+  bottom: 70rpx;
+  right: 40rpx;
+}
+.dashboard .nextPass.disabled {
+  color: #ccc;
+}
+.dashboard .prePass {
+  left: 40rpx;
+  bottom: 70rpx;
 }

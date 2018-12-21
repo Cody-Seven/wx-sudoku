@@ -17,25 +17,29 @@
 
 .container {
   background-color: @gridStart;
-  height: 650rpx;
+  height: 780rpx;
   .row {
     width: 100%;
     border-color: #ccc;
-    height: 82rpsx;
+    height: 92rpx;
     display: flex;
     >span {
       width: 11%;
       display: inline-block;
       cursor: pointer;
       text-align: center;
-      height: 70rpx;
-      line-height: 70rpx;
+      height: 90rpx;
+      line-height: 90rpx;
       color: #fff;
       border: 1px solid #ccc;
       background-color: @gridStart;
       border-right-width: 0;
       border-bottom-width: 0;
       position: relative;
+      &.fill {
+        color: #999;
+        font-weight: 700;
+      }
       &.light {
         background-color: @gridEnd;
       }
@@ -72,29 +76,9 @@
           color: @mark2Color;
         }
       }
-      .tip {
-        display: inline-block;
-        background-color: aquamarine;
-        width: 20rpx;
-        height: 20rpx;
-        border-radius: 20rpx;
-        position: absolute;
-        top: 4rpx;
-        left: 4rpx;
-        &::after {
-          content: '';
-          display: inline-block;
-          background-color: @gridStart;
-          width: 12rpx;
-          height: 12rpx;
-          border-radius: 12rpx;
-          position: absolute;
-          top: 4rpx;
-          left: 4rpx;
-        }
-      }
-      &.light .tip &::after {
-        background-color: @gridEnd;
+      &.clear {
+        color: #fff;
+        font-size: 14px;
       }
     }
     &.row_g_bottom {
@@ -120,6 +104,7 @@
   .container();
   height: 320rpx;
   .row {
+    height: 82rpx;
     >span {
       width: @popupCellSize;
       height: @popupCellSize;
@@ -132,7 +117,7 @@
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  box-shadow: @shadowTop;
+  position: relative;
   .buttons {
     width: 100%;
     button {
@@ -142,8 +127,8 @@
       border-radius: 40rpx;
       border: none;
       color: #fff;
-      height: 90rpx;
-      line-height: 90rpx;
+      height: 70rpx;
+      line-height: 70rpx;
       vertical-align: middle;
       margin: 30rpx auto;
       box-shadow: 0 0 5px @buttonColor;
@@ -157,5 +142,21 @@
         outline: 0;
       }
     }
+  }
+  span {
+    color: @buttonColor;
+    text-decoration: underline;
+    position: absolute;
+  }
+  .nextPass {
+    bottom: 70rpx;
+    right: 40rpx;
+    &.disabled{
+      color: #ccc;
+    }
+  }
+  .prePass {
+    left: 40rpx;
+    bottom: 70rpx;
   }
 }

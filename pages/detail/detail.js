@@ -7,11 +7,12 @@ Page({
    */
   data: {
     showPop: false,
+    disabled: false,
     gridData: [],
     originData: [],
     currentPosition: {},
-    top: 0,
-    left: 0,
+    top: null,
+    left: null,
     level: 3,
     buttonTexts: [
       { text: '检查', func: 'check'},
@@ -106,7 +107,7 @@ Page({
       this.setData({
         'currentPosition.i': i,
         'currentPosition.j': j,
-        showPop: true
+        showPop: !this.data.showPop
       })
     }else{
       this.setData({
@@ -143,17 +144,32 @@ Page({
       showPop: !this.data.showPop
     })
   },
+  clearMark () {
+    if(this.data.mark1[this.data.currentPosition.i][this.data.currentPosition.j]){
+      let position = this._setPosition('mark1')
+      this.setData({
+        [position]: false
+      })
+    }
+    if (this.data.mark2[this.data.currentPosition.i][this.data.currentPosition.j]) {
+      let position = this._setPosition('mark2')
+      this.setData({
+        [position]: false
+      })
+    }
+  },
   check: function () {
     // 检查每行 每列 每宫数据
     let result = grid.check(this.data.gridData)
     if (result===true){
-      console.log('success')
-    }else{
       this.setData({
-        errorMarks: result
+        success: true
       })
+      this.nextPass()
     }
-
+    this.setData({
+      errorMarks: result
+    })
   },
   reset: function () {
     // 清除错误标记
@@ -182,9 +198,22 @@ Page({
   },
   _buildFalseArray: function () {
     return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return false }))
-
   },
   _buildArray: function () {
     return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return true }))
+  },
+  prePass: function () {
+    this.setData({
+      level: this.data.level - 1
+    })
+    this.build(this.data.level)
+  },
+  nextPass: function () {
+    if(this.data.success){
+       this.setData({
+       level: this.data.level + 1
+    })
+    this.build(this.data.level)
+    }
   }
 })
