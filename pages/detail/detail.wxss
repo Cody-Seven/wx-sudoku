@@ -227,3 +227,32 @@
   left: 40rpx;
   bottom: 70rpx;
 }
+.start-wrap {
+  position: absolute;
+  left: 100rpx;
+  top: 80rpx;
+}
+.start-wrap .big-circle {
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 500rpx;
+  background-color: rgba(58, 30, 120, 0.8);
+}
+.start-wrap .big-circle text {
+  font-size: 80rpx;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  left: 180rpx;
+  top: 150rpx;
+}
+.start-wrap .small-circle {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 350rpx;
+  background-color: rgba(96, 49, 152, 0.8);
+  opacity: .8;
+  position: absolute;
+  left: 250rpx;
+  top: 280rpx;
+}

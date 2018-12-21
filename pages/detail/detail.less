@@ -1,7 +1,9 @@
 @shadowBottom: 0 0.2rem 0.3rem rgba(48, 48, 48, 192);
 @shadowTop: 0 -0.1rem 0.2rem rgba(96, 49, 152, .5);
 @gridStart: rgba(58, 30, 120, 1);
+@circle: rgba(58, 30, 120, .8);
 @gridEnd: rgba(96, 49, 152, 1);
+@circleEnd: rgba(96, 49, 152, .8);
 @buttonColor: #7a6ed5;
 @errorColor: #000;
 @mark1Color: teal;
@@ -121,7 +123,7 @@
   padding: 1rem;
   box-sizing: border-box;
   position: relative;
-  .count-down{
+  .count-down {
     font-size: 16px;
     color: @buttonColor;
     position: absolute;
@@ -161,12 +163,42 @@
   .nextPass {
     bottom: 70rpx;
     right: 40rpx;
-    &.disabled{
+    &.disabled {
       color: #ccc;
     }
   }
   .prePass {
     left: 40rpx;
     bottom: 70rpx;
+  }
+}
+
+.start-wrap {
+  position: absolute;
+  left: 100rpx;
+  top: 80rpx;
+  .big-circle {
+    width: 500rpx;
+    height: 500rpx;
+    border-radius: 500rpx;
+    background-color: @circle;
+    text {
+      font-size: 80rpx;
+      font-weight: 700;
+      color: #fff;
+      position: absolute;
+      left: 180rpx;
+      top: 150rpx;
+    }
+  }
+  .small-circle {
+    width: 300rpx;
+    height: 300rpx;
+    border-radius: 350rpx;
+    background-color: @circleEnd;
+    opacity: .8;
+    position: absolute;
+    left: 250rpx;
+    top: 280rpx;
   }
 }

@@ -2,6 +2,7 @@
 import Grid from './js/core/grid'
 const grid = new Grid()
 let countTime
+let startTime
 Page({
   /**
    * 页面的初始数据
@@ -9,7 +10,10 @@ Page({
   data: {
     showPop: false,
     disabled: false,
+    start: false,
+    startcount: false,
     countDown: 0,
+    countUp: 3,
     count: '',
     gridData: [],
     originData: [],
@@ -43,13 +47,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    countTime = setInterval(() => {
-      this.setData({
-        countDown: ++this.data.countDown,
-        count: this._getTime(this.data.countDown),
 
-      })
-    }, 1000)
   },
 
   /**
@@ -92,6 +90,31 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  doStart () {
+    this.setData({
+      startcount: true
+    })
+    startTime = setInterval(() => {
+      console.log(this.data.countUp)
+      if(this.data.countUp!==0){
+        this.setData({
+          countUp: this.data.countUp - 1
+        })
+      }else{
+        this.setData({
+          countUp: 3,
+          start: true
+        })
+        clearInterval(startTime)
+        countTime = setInterval(() => {
+          this.setData({
+            countDown: ++this.data.countDown,
+            count: this._getTime(this.data.countDown)
+          })
+        }, 1000)
+      }
+    }, 1000)
   },
   build () {
     let gridData = grid.build(this.data.level)

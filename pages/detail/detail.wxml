@@ -23,4 +23,10 @@
       <span class="mark1" bindtap="doMark1"></span><span class="clear" bindtap="clearMark">clear</span><span class="mark2" bindtap="doMark2"></span>
     </view>
   </view>
+  <view class="start-wrap" wx:if="{{!start}}">
+    <view class="big-circle">
+      <text bindtap="doStart">{{startcount ?  countUp : '开始'}}</text>
+    </view>
+    <view class="small-circle"></view>
+  </view>
 </view>
