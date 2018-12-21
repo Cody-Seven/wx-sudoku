@@ -28,6 +28,8 @@
   border-right-width: 0;
   border-bottom-width: 0;
   position: relative;
+  font-size: 56rpx;
+  font-weight: 700;
 }
 .container .row > span.fill {
   color: #999;
@@ -85,7 +87,7 @@
 .popup_num {
   background-color: #3a1e78;
   height: 780rpx;
-  height: 320rpx;
+  height: 280rpx;
 }
 .popup_num .row {
   width: 100%;
@@ -106,6 +108,8 @@
   border-right-width: 0;
   border-bottom-width: 0;
   position: relative;
+  font-size: 56rpx;
+  font-weight: 700;
 }
 .popup_num .row > span.fill {
   color: #999;
@@ -161,12 +165,13 @@
   border-bottom-width: 2px;
 }
 .popup_num .row {
-  height: 82rpx;
+  height: 72rpx;
 }
 .popup_num .row > span {
   width: 40px;
   height: 40px;
   line-height: 40px;
+  font-size: 48rpx;
 }
 .dashboard {
   width: 100%;

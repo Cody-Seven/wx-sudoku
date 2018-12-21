@@ -33,9 +33,8 @@
   width: 500rpx;
   line-height: 50rpx;
   display: block;
-  top: 350rpx;
   text-align: center;
-  margin: 350rpx auto;
+  margin: 400rpx auto;
   margin-bottom: 0;
 }
 .modal .circle1 {
@@ -169,11 +168,13 @@ swiper image {
 .start-button {
   background-color: #7a6ed5;
   width: 180rpx;
-  font-size: 16px;
+  font-size: 36rpx;
+  font-weight: 700;
   border-radius: 40rpx;
   border: none;
   color: #fff;
   height: 80rpx;
+  line-height: 80rpx;
   vertical-align: middle;
   display: inline-block;
   margin-left: 40rpx;
