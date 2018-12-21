@@ -179,6 +179,13 @@
   box-sizing: border-box;
   position: relative;
 }
+.dashboard .count-down {
+  font-size: 16px;
+  color: #7a6ed5;
+  position: absolute;
+  left: 40rpx;
+  top: 40rpx;
+}
 .dashboard .buttons {
   width: 100%;
 }

@@ -8,6 +8,7 @@
   </view>
   <!-- 按钮组 -->
   <view class="dashboard" id="dashboard" class="dashboard button-wrap">
+    <text class="count-down">{{count}}</text>
     <span bindtap="prePass" class="prePass">上一关</span>
     <view class="buttons">
       <button wx:for="{{buttonTexts}}" wx:for-item="item" wx:key="index" bindtap="{{item.func}}">{{item.text}}</button>

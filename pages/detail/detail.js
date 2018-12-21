@@ -1,6 +1,7 @@
 // pages/detail/detail.js
 import Grid from './js/core/grid'
 const grid = new Grid()
+let countTime
 Page({
   /**
    * 页面的初始数据
@@ -8,6 +9,8 @@ Page({
   data: {
     showPop: false,
     disabled: false,
+    countDown: 0,
+    count: '',
     gridData: [],
     originData: [],
     currentPosition: {},
@@ -40,6 +43,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    countTime = setInterval(() => {
+      this.setData({
+        countDown: ++this.data.countDown,
+        count: this._getTime(this.data.countDown),
+
+      })
+    }, 1000)
   },
 
   /**
@@ -165,6 +175,7 @@ Page({
       this.setData({
         success: true
       })
+      clearTimeout(countTime)
       this.nextPass()
     }
     this.setData({
@@ -193,15 +204,6 @@ Page({
     this.build()
     // 清除标记
   },
-  _setPosition (str) {
-    return '' + str + '[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
-  },
-  _buildFalseArray: function () {
-    return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return false }))
-  },
-  _buildArray: function () {
-    return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return true }))
-  },
   prePass: function () {
     this.setData({
       level: this.data.level - 1
@@ -215,5 +217,29 @@ Page({
     })
     this.build(this.data.level)
     }
-  }
+  },
+  _setPosition (str) {
+    return '' + str + '[' + this.data.currentPosition.i + '][' + this.data.currentPosition.j + ']'
+  },
+  _buildFalseArray: function () {
+    return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return false }))
+  },
+  _buildArray: function () {
+    return Array.from({ length: 9 }).map(() => Array.from({ length: 9 }).map(() => { return true }))
+  },
+  _getTime: function (time) {
+    if(time<60){
+      let s = time % 60
+      s = s > 9 ? s : '0' + s
+      return '00:' + s
+    }else{
+      let h = time / 60 / 60
+      h = h > 9 ? h : '0' + h
+      let m = time / 60
+      m = m > 9 ? m : '0' + m
+      let s = time % 60
+      s = s > 9 ? s : '0' + s
+    }
+    return h + ':' + m + ':' + s
+   }
 })
