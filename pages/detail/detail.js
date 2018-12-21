@@ -233,13 +233,13 @@ Page({
       s = s > 9 ? s : '0' + s
       return '00:' + s
     }else{
-      let h = time / 60 / 60
+      let h = parseInt(time / 60 / 60)
       h = h > 9 ? h : '0' + h
-      let m = time / 60
+      let m = parseInt(time / 60)
       m = m > 9 ? m : '0' + m
       let s = time % 60
       s = s > 9 ? s : '0' + s
+      return h + ':' + m + ':' + s
     }
-    return h + ':' + m + ':' + s
    }
 })
