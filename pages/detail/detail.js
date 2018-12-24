@@ -91,12 +91,14 @@ Page({
   onShareAppMessage: function () {
 
   },
+  getLevel () {
+    wx.getStorage('level') ? this.setData({ level: wx.getStorage('level')}) : wx.setStorage({'level': this.data.level})
+  },
   doStart () {
     this.setData({
       startcount: true
     })
     startTime = setInterval(() => {
-      console.log(this.data.countUp)
       if(this.data.countUp!==0){
         this.setData({
           countUp: this.data.countUp - 1
@@ -201,6 +203,7 @@ Page({
       })
       clearTimeout(countTime)
       this.nextPass()
+      alert('success')
     }else{
       this.setData({
         errorMarks: result
@@ -241,6 +244,7 @@ Page({
        level: this.data.level + 1
     })
     this.build(this.data.level)
+    wx.setStorage({level: this.data.level})
     }
   },
   _setPosition (str) {
